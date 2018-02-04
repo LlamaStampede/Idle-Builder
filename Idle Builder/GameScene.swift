@@ -6,7 +6,7 @@
 //  Copyright © 2018 Lembck, Michael. All rights reserved.
 //
 
-import SpriteKitx
+import SpriteKit
 import GameplayKit
 
 class GameScene: SKScene {
@@ -16,7 +16,7 @@ class GameScene: SKScene {
 
     override func didMove(to view: SKView) // called when GameScene is called
     {
-        backgroundColor = SKColor.lightGray
+        backgroundColor = SKColor.blue
 
 
     }
