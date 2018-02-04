@@ -15,6 +15,7 @@
 		EDE465EC20277D76009F7275 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDE465EA20277D76009F7275 /* Main.storyboard */; };
 		EDE465EE20277D76009F7275 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDE465ED20277D76009F7275 /* Assets.xcassets */; };
 		EDE465F120277D76009F7275 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDE465EF20277D76009F7275 /* LaunchScreen.storyboard */; };
+		EDE465F920278494009F7275 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE465F820278494009F7275 /* SecondViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		EDE465ED20277D76009F7275 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDE465F020277D76009F7275 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EDE465F220277D76009F7275 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDE465F820278494009F7275 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				EDE465E420277D76009F7275 /* Actions.sks */,
 				EDE465E620277D76009F7275 /* GameScene.swift */,
 				EDE465E820277D76009F7275 /* GameViewController.swift */,
+				EDE465F820278494009F7275 /* SecondViewController.swift */,
 				EDE465EA20277D76009F7275 /* Main.storyboard */,
 				EDE465ED20277D76009F7275 /* Assets.xcassets */,
 				EDE465EF20277D76009F7275 /* LaunchScreen.storyboard */,
@@ -148,6 +151,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDE465F920278494009F7275 /* SecondViewController.swift in Sources */,
 				EDE465E720277D76009F7275 /* GameScene.swift in Sources */,
 				EDE465E920277D76009F7275 /* GameViewController.swift in Sources */,
 				EDE465E120277D75009F7275 /* AppDelegate.swift in Sources */,
@@ -279,6 +283,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lembck.Idle-Builder";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -292,6 +297,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lembck.Idle-Builder";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

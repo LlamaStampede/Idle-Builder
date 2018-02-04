@@ -1,26 +1,90 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+    <device id="retina4_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="Idle_Builder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8aa-yV-Osq"/>
                         <viewControllerLayoutGuide type="bottom" id="qHh-Mt-9TT"/>
                     </layoutGuides>
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="G9l-Nf-ooR">
+                                <rect key="frame" x="20" y="20" width="627" height="355"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9JX-BA-8Qu" userLabel="Start Button">
+                                        <rect key="frame" x="0.0" y="0.0" width="627" height="355"/>
+                                        <state key="normal" title="Start"/>
+                                        <connections>
+                                            <segue destination="0hN-dc-UCW" kind="show" id="bSL-Dp-T2q"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="G9l-Nf-ooR" secondAttribute="trailing" id="ErZ-zk-Z9A"/>
+                            <constraint firstItem="qHh-Mt-9TT" firstAttribute="top" secondItem="G9l-Nf-ooR" secondAttribute="bottom" id="KOC-vx-zXo"/>
+                            <constraint firstItem="G9l-Nf-ooR" firstAttribute="top" secondItem="8aa-yV-Osq" secondAttribute="bottom" id="f42-9n-xS9"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="G9l-Nf-ooR" secondAttribute="leading" id="jbr-Zq-yob"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="134" y="7"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="UcE-cq-P1f">
+            <objects>
+                <viewController id="0hN-dc-UCW" customClass="SecondViewController" customModule="Idle_Builder" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Tiz-kw-zO2"/>
+                        <viewControllerLayoutGuide type="bottom" id="wG7-8c-Tex"/>
+                    </layoutGuides>
+                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="TDT-Kq-S1t" customClass="SKView">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="LWu-GC-T4w">
+                                <rect key="frame" x="20" y="20" width="627" height="355"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Zh-go-SwO">
+                                        <rect key="frame" x="0.0" y="0.0" width="627" height="355"/>
+                                        <state key="normal" title="Main Menu"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="LWu-GC-T4w" firstAttribute="top" secondItem="Tiz-kw-zO2" secondAttribute="bottom" id="0oa-Rx-idN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LWu-GC-T4w" secondAttribute="trailing" id="7wK-Di-YeE"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="LWu-GC-T4w" secondAttribute="leading" id="JOR-3g-Ep5"/>
+                            <constraint firstItem="wG7-8c-Tex" firstAttribute="top" secondItem="LWu-GC-T4w" secondAttribute="bottom" id="qho-XG-Ydn"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mainMenuOutlet" destination="7Zh-go-SwO" id="UJt-oz-UcW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KXg-Vx-rmF" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-250" y="750"/>
         </scene>
     </scenes>
 </document>

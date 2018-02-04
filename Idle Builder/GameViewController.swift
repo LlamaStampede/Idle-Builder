@@ -10,27 +10,33 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
+var cloudAmount : Int = 0
+var teethAmount : Int = 0
+
+
 class GameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         if let view = self.view as! SKView? {
-            // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "GameScene") {
-                // Set the scale mode to scale to fit the window
-                scene.scaleMode = .aspectFill
-                
-                // Present the scene
-                view.presentScene(scene)
-            }
-            
+            let scene = SKScene(size: view.bounds.size)
+            scene.scaleMode = .aspectFill
+            //scene.backgroundColor = UIColor.red
+            view.presentScene(scene)
+
+
             view.ignoresSiblingOrder = true
-            
+
             view.showsFPS = true
             view.showsNodeCount = true
         }
     }
+
+    /*@IBAction func startGame(_ sender: Any) {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.view.backgroundColor = UIColor.red
+        })
+    }*/
 
     override var shouldAutorotate: Bool {
         return true
