@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Idle Builder.xcodeproj">
+      location = "self:/Users/mlembck/Desktop/Idle Builder/Idle Builder.xcodeproj">
    </FileRef>
 </Workspace>

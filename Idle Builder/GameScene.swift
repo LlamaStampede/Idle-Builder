@@ -6,7 +6,7 @@
 //  Copyright © 2018 Lembck, Michael. All rights reserved.
 //
 
-import SpriteKit
+import SpriteKitx
 import GameplayKit
 
 class GameScene: SKScene {

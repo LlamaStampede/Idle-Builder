@@ -320,6 +320,7 @@
 				EDE465F720277D76009F7275 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
