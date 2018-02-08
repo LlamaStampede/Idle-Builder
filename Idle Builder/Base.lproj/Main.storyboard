@@ -23,24 +23,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S0f-og-Wqo">
-                                <rect key="frame" x="20" y="120" width="200" height="85"/>
+                                <rect key="frame" x="20" y="120" width="200" height="145"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="G9l-Nf-ooR">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="85"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="145"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9JX-BA-8Qu" userLabel="Start Button">
-                                                <rect key="frame" x="0.0" y="0.0" width="200" height="30"/>
-                                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9JX-BA-8Qu" userLabel="Start Button">
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="PCh-c6-RbQ"/>
                                                 </constraints>
-                                                <state key="normal" title="Start"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                <state key="normal" title="Start" backgroundImage="Button">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
                                                 <connections>
                                                     <segue destination="0hN-dc-UCW" kind="show" id="bSL-Dp-T2q"/>
                                                 </connections>
                                             </button>
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="nothing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzb-mf-qzt">
-                                                <rect key="frame" x="0.0" y="30" width="200" height="25"/>
+                                                <rect key="frame" x="0.0" y="60" width="200" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="25" id="UFK-Bd-qpB"/>
                                                 </constraints>
@@ -49,12 +51,14 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRc-ov-XFX" userLabel="Help Button">
-                                                <rect key="frame" x="0.0" y="55" width="200" height="30"/>
-                                                <color key="backgroundColor" red="0.41176470590000003" green="0.6588235294" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <rect key="frame" x="0.0" y="85" width="200" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="hs1-cn-rET"/>
                                                 </constraints>
-                                                <state key="normal" title="Help"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                <state key="normal" title="Help" backgroundImage="Button">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -122,4 +126,7 @@
             <point key="canvasLocation" x="-250" y="750"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Button" width="200" height="40"/>
+    </resources>
 </document>
