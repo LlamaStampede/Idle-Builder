@@ -12,6 +12,10 @@ import GameplayKit
 let bankSpacingLeft : CGFloat = 25
 let bankSpacingDown : CGFloat = 50
 
+var differences : [CGFloat] = []
+
+var currentXs : [CGFloat] = [0, 0, 0, 0, 0, 0, 0]
+
 class GameScene: SKScene {
 
     var viewController : SecondViewController?
@@ -23,7 +27,9 @@ class GameScene: SKScene {
     var quotient : CGFloat = 0
 
     var bankSprite = Objects(imageNamed: "Bank")
-    var bankSprite2 = Objects(imageNamed: "Bank")
+    var bankSprite2 = Objects(imageNamed: "Spaceship")
+    var bankSprite3 = Objects(imageNamed: "Spaceship")
+    var bankSprite4 = Objects(imageNamed: "Spaceship")
 
 
 
@@ -39,10 +45,16 @@ class GameScene: SKScene {
         bankSprite2.position.y += bankSprite2.size.height/2
         addChild(bankSprite2)
 
+        bankSprite3.size = CGSize(width: 100, height: 100)
+        bankSprite3.position.y += bankSprite3.size.height/2
+        addChild(bankSprite3)
 
+        bankSprite4.size = CGSize(width: 100, height: 100)
+        bankSprite4.position.y += bankSprite4.size.height/2
+        addChild(bankSprite4)
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print("Began")
+        //print("Began")
         for t in touches
         {
             startTime = 0
@@ -50,9 +62,12 @@ class GameScene: SKScene {
             xCoordinate = 0
             movedXCoord = 0
             var startX = t.location(in: view).x
+            for i in objectElements{
+                differences.append(startX - i.position.x)
+            }
             difference = startX - bankSprite.position.x
             xCoordinate = startX
-            print("X: Coord", startX)
+            //print("X: Coord", startX)
         }
     }
 
@@ -64,10 +79,10 @@ class GameScene: SKScene {
                 movedXCoord = moveX - CGFloat(xCoordinate)
                 //print("X: Coord", movedXCoord)
                 for i in objectElements {
-                    i.position.x = moveX - difference + CGFloat(xCoordinates[i.number-1])
+                    i.position.x = moveX - differences[i.number-1]
                 }
-
-
+                //bankSprite.position.x = moveX - differences[0]
+                //print(differences[0], difference)
             }
 
 
@@ -80,11 +95,12 @@ class GameScene: SKScene {
 
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print("Ended", startTime, movedXCoord)
+        //print("Ended", startTime, movedXCoord)
         for t in touches
         {
+            differences = []
             quotient = movedXCoord / startTime
-            print("Quotient", quotient)
+            //print("Quotient", quotient)
         }
 
 
@@ -121,9 +137,21 @@ class GameScene: SKScene {
         if quotient < 1 && quotient > -1 {
             quotient = 0
         }
-
-        if bankSprite.position.x <= bankSpacingLeft + 100 {
-            bankSprite.position.x = bankSpacingLeft + 100
+        for i in objectElements {
+            if i.number == amount && i.position.x < 3 * size.width / 4 { //the last one
+                for j in objectElements {
+                    j.position.x = size.width * 3/4 - CGFloat(xCoordinates[(amount - j.number)]) + CGFloat(xCoordinates[0])
+                }
+            }
+            if i.number == 1 && i.position.x > CGFloat(xCoordinates[0]) { //the first one
+                for j in objectElements {
+                    j.position.x = CGFloat(xCoordinates[j.number-1])
+                }
+            }
+            //if i.position.x <
+        }
+        for i in objectElements {
+             currentXs[i.number-1] = i.position.x
         }
     }
 }

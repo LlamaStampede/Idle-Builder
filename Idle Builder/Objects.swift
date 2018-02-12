@@ -54,10 +54,15 @@ class Objects : SKSpriteNode {
                 xposition += CGFloat(widths[i])
             }
         }
+        xposition += CGFloat(widths[number-1]/2)
+        print(CGFloat(widths[number-1]/2))
         xCoordinates.append(Int(xposition))
+        if number == 1 {
+            print(xCoordinates)
+        }
         self.position.x = CGFloat(xposition)
-        var were = self.texture?.size()
-        print("Size: ", were)
+        //var were = self.texture?.size()
+        //print("Size: ", were)
         self.position.y = CGFloat(bankSpacingDown)
     }
 
