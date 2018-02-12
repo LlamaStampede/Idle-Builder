@@ -50,8 +50,9 @@ class Objects : SKSpriteNode {
         xposition += CGFloat(number) * bankSpacingLeft
         if number != 1
         {
-            for i in 0...number-1 {
+            for i in 0...number-2 {
                 xposition += CGFloat(widths[i])
+                print("HERE: ", widths[i])
             }
         }
         xposition += CGFloat(widths[number-1]/2)
