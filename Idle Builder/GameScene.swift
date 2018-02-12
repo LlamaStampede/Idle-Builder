@@ -9,51 +9,38 @@
 import SpriteKit
 import GameplayKit
 
+let bankSpacingLeft : CGFloat = 25
+let bankSpacingDown : CGFloat = 50
+
 class GameScene: SKScene {
+
+    var viewController : SecondViewController?
 
     var xCoordinate : CGFloat = 0
     var movedXCoord : CGFloat = 0
     var startTime : CGFloat = 0
     var difference : CGFloat = 0
     var quotient : CGFloat = 0
-    var viewController : SecondViewController?
-    private var bankSprite = SKSpriteNode(imageNamed: "Bank")
-    let swipeLeftRec = UISwipeGestureRecognizerDirection.left
-    let swipeRightRec = UISwipeGestureRecognizerDirection.right
-    let bankSpacingLeft : CGFloat = 25
-    let bankSpacingDown : CGFloat = 50
+
+    var bankSprite = Objects(imageNamed: "Bank")
+    var bankSprite2 = Objects(imageNamed: "Bank")
+
+
 
     override func didMove(to view: SKView) // called when GameScene is called
     {
         backgroundColor = SKColor.blue
 
-
-
         bankSprite.size = CGSize(width: 200, height: 200)
-        bankSprite.position = CGPoint(x: 100 + bankSpacingLeft, y: 100 + bankSpacingDown)
+        bankSprite.position.y += bankSprite.size.height/2
         addChild(bankSprite)
 
-        /*let swipeLeft: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipedLeft))
-        swipeLeft.direction = .left
-        view.addGestureRecognizer(swipeLeft)
+        bankSprite2.size = CGSize(width: 100, height: 100)
+        bankSprite2.position.y += bankSprite2.size.height/2
+        addChild(bankSprite2)
 
-        let swipeRight: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipedRight))
-        swipeRight.direction = .right
-        view.addGestureRecognizer(swipeRight)*/
+
     }
-
-    /*func swipedLeft(sender:UISwipeGestureRecognizer){
-        test = true
-        //print(sender.location(in: view))
-        print("Left")
-    }
-
-    func swipedRight(sender:UISwipeGestureRecognizer){
-        print("Right")
-        //, sender.location(in: view))
-
-    }*/
-    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         print("Began")
         for t in touches
@@ -76,7 +63,10 @@ class GameScene: SKScene {
                 var moveX = t.location(in: view).x
                 movedXCoord = moveX - CGFloat(xCoordinate)
                 //print("X: Coord", movedXCoord)
-                bankSprite.position.x = moveX - difference
+                for i in objectElements {
+                    i.position.x = moveX - difference + CGFloat(xCoordinates[i.number-1])
+                }
+
 
             }
 
@@ -113,18 +103,25 @@ class GameScene: SKScene {
 
 
     override func update(_ currentTime: TimeInterval) {
+        var speed : CGFloat = 1
+
         startTime += 1
+
+        for i in objectElements {
+            i.position.x += quotient
+        }
+
         if quotient > 0 {
-            quotient -= 0.5
-            bankSprite.position.x += quotient
+            quotient -= speed
         }
         if quotient < 0 {
-            quotient += 0.5
-            bankSprite.position.x += quotient
+            quotient += speed
         }
+
         if quotient < 1 && quotient > -1 {
             quotient = 0
         }
+
         if bankSprite.position.x <= bankSpacingLeft + 100 {
             bankSprite.position.x = bankSpacingLeft + 100
         }
