@@ -31,7 +31,15 @@ class GameScene: SKScene {
     var quotient : CGFloat = 0
 
     var bankSprite = Objects(imageNamed: "Bank")
-    var bankSprite2 = Objects(imageNamed: "houseOne")
+    var house = Objects(imageNamed: "houseOne")
+    var outlineSprite = Objects(imageNamed: "house Outline")
+
+    var bankText = MoneyTexts(fontNamed: "Arial", theText: "\(currentMoneyValues[0])", theFontSize: 32)
+    var firstText = MoneyTexts(fontNamed: "Arial", theText: "\(currentMoneyValues[0])", theFontSize: 32)
+
+    //var background = SKSpriteNode(imageNamed: "background")
+    //var secondText = MoneyTexts(fontNamed: "Arial", theText: "\(currentMoneyValues[0])", theFontSize: 32)
+    /*var bankSprite2 = Objects(imageNamed: "houseOne")
     var bankSprite3 = Objects(imageNamed: "houseOne")
     var bankSprite4 = Objects(imageNamed: "houseOne")
 
@@ -49,50 +57,57 @@ class GameScene: SKScene {
     var sixthText = MoneyTexts(fontNamed: "Arial", theText: "\(currentMoneyValues[0])", theFontSize: 32)
     var seventhText = MoneyTexts(fontNamed: "Arial", theText: "\(currentMoneyValues[0])", theFontSize: 32)
     var eighthText = MoneyTexts(fontNamed: "Arial", theText: "\(currentMoneyValues[0])", theFontSize: 32)
-    var ninthText = MoneyTexts(fontNamed: "Arial", theText: "\(currentMoneyValues[0])", theFontSize: 32)
+    var ninthText = MoneyTexts(fontNamed: "Arial", theText: "\(currentMoneyValues[0])", theFontSize: 32)*/
 
 
 
     override func didMove(to view: SKView) // called when GameScene is called
     {
         backgroundColor = SKColor.blue
+/*
+        background.size = CGSize(width: size.width, height: size.height)
+        background.position = CGPoint(x: size.width/2, y: size.height/2)
+        background.zPosition = -10
+        addChild(background)*/
 
-        //bankSprite.size = CGSize(width: 200, height: 200)
-        bankSprite.position.y += bankSprite.size.height/2
         addChild(bankSprite)
+        addChild(house)
+        addChild(outlineSprite)
+        addChild(bankText)
+        addChild(firstText)
 
-        //bankSprite2.size = CGSize(width: 100, height: 100)
-        bankSprite2.position.y += bankSprite2.size.height/2
+
+        /*bankSprite2.position.y += bankSprite2.size.height/2
         addChild(bankSprite2)
 
-        //bankSprite3.size = CGSize(width: 100, height: 100)
+
         bankSprite3.position.y += bankSprite3.size.height/2
         addChild(bankSprite3)
 
-        //bankSprite4.size = CGSize(width: 100, height: 100)
+
         bankSprite4.position.y += bankSprite4.size.height/2
         addChild(bankSprite4)
 
-        //one.size = CGSize(width: 100, height: 100)
+
         one.position.y += one.size.height/2
         addChild(one)
 
-        //two.size = CGSize(width: 100, height: 100)
+
         two.position.y += two.size.height/2
         addChild(two)
 
-        //three.size = CGSize(width: 100, height: 100)
+
         three.position.y += three.size.height/2
         addChild(three)
 
         five.position.y += five.size.height/2
         addChild(five)
 
-        //four.size = CGSize(width: 100, height: 100)
+
         four.position.y += four.size.height/2
         addChild(four)
 
-        //six.position.y += six.size.height/2
+
         addChild(firstText)
         addChild(secondText)
         addChild(thirdText)
@@ -101,7 +116,7 @@ class GameScene: SKScene {
         addChild(sixthText)
         addChild(seventhText)
         addChild(eighthText)
-        addChild(ninthText)
+        addChild(ninthText)*/
         /*let score = SKLabelNode(fontNamed: "Arial")
         score.text = "This is a label defined localy and added to a node tree"
         score.name = "score"
@@ -127,6 +142,34 @@ class GameScene: SKScene {
                     differences.append(startX - i.position.x)
                     if checkBoundaries(thing: i, coords : t.location(in: view)) == true {
                         currentMoneyValues[i.number-1] += 1
+                    }
+                }
+                for object in objectElements {
+                    if object.name == "outline" {
+                        if checkBoundaries(thing: object, coords : t.location(in: view)) == true {
+                            //print("Clicked \( objectElements[amount-1].number)")
+                            //objectElements[object.number-1].removeFromParent()
+                            object.texture = SKTexture(imageNamed: "houseOne")
+                            object.name = "house"
+                            //amount -= 1
+                            //print(widths)
+                            //widths.removeLast()
+                            //print(widths)
+                            //print(xCoordinates)
+                            //xCoordinates.removeLast()
+                            print("name:", object.name)
+                            currentMoneyValues.append(0)
+                            currentXs.append(0)
+                            //print(xCoordinates)
+                            var outline = Objects(imageNamed: "house Outline")
+                            addChild(outline)
+                            var firstText = MoneyTexts(fontNamed: "Arial", theText: "\(currentMoneyValues[0])", theFontSize: 32)
+                            addChild(firstText)
+                            //var outline = Objects(imageNamed: "house Outline")
+                            //addChild(outline)
+                            /*                    var text = MoneyTexts(fontNamed: "Arial", theText: "\(currentMoneyValues[amount-1])", theFontSize: 32)
+                            addChild(text)*/
+                        }
                     }
                 }
                 difference = startX - bankSprite.position.x
@@ -274,7 +317,12 @@ class GameScene: SKScene {
         }
         for text in textArray {
             text.position.x = currentXs[text.number]
-            text.text = String(currentMoneyValues[text.number])
+            if text.number == 0 {
+                text.text = String(amount)
+            }
+            else {
+                text.text = String(currentMoneyValues[text.number])
+            }
         }
     }
 }
