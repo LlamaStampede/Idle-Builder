@@ -44,6 +44,7 @@ class Objects : SKSpriteNode {
     }
     func test() {
     }
+    
     func getCoords(number : Int) {
         var xposition : CGFloat = 0
 

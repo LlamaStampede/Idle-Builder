@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EDCF05E22035B9EE00BA2071 /* MoneyText.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCF05E12035B9ED00BA2071 /* MoneyText.swift */; };
 		EDD122DB2030BFD90046B212 /* Objects.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD122DA2030BFD90046B212 /* Objects.swift */; };
 		EDE465E120277D75009F7275 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE465E020277D75009F7275 /* AppDelegate.swift */; };
 		EDE465E320277D76009F7275 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = EDE465E220277D76009F7275 /* GameScene.sks */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EDCF05E12035B9ED00BA2071 /* MoneyText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoneyText.swift; sourceTree = "<group>"; };
 		EDD122DA2030BFD90046B212 /* Objects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Objects.swift; sourceTree = "<group>"; };
 		EDE465DD20277D75009F7275 /* Idle Builder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Idle Builder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDE465E020277D75009F7275 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				EDE465E420277D76009F7275 /* Actions.sks */,
 				EDE465E620277D76009F7275 /* GameScene.swift */,
 				EDD122DA2030BFD90046B212 /* Objects.swift */,
+				EDCF05E12035B9ED00BA2071 /* MoneyText.swift */,
 				EDE465E820277D76009F7275 /* GameViewController.swift */,
 				EDE465F820278494009F7275 /* SecondViewController.swift */,
 				EDE465EA20277D76009F7275 /* Main.storyboard */,
@@ -159,6 +162,7 @@
 				EDE465E720277D76009F7275 /* GameScene.swift in Sources */,
 				EDE465E920277D76009F7275 /* GameViewController.swift in Sources */,
 				EDE465E120277D75009F7275 /* AppDelegate.swift in Sources */,
+				EDCF05E22035B9EE00BA2071 /* MoneyText.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
