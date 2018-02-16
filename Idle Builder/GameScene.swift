@@ -37,6 +37,8 @@ class GameScene: SKScene {
     var bankText = MoneyTexts(fontNamed: "Arial", theText: "\(currentMoneyValues[0])", theFontSize: 32)
     var firstText = MoneyTexts(fontNamed: "Arial", theText: "\(currentMoneyValues[0])", theFontSize: 32)
 
+    var preventError = false
+
     //var background = SKSpriteNode(imageNamed: "background")
     //var secondText = MoneyTexts(fontNamed: "Arial", theText: "\(currentMoneyValues[0])", theFontSize: 32)
     /*var bankSprite2 = Objects(imageNamed: "houseOne")
@@ -147,6 +149,7 @@ class GameScene: SKScene {
                 for object in objectElements {
                     if object.name == "outline" {
                         if checkBoundaries(thing: object, coords : t.location(in: view)) == true {
+                            preventError = true
                             //print("Clicked \( objectElements[amount-1].number)")
                             //objectElements[object.number-1].removeFromParent()
                             object.texture = SKTexture(imageNamed: "houseOne")
@@ -183,7 +186,7 @@ class GameScene: SKScene {
 
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         //print("Moved")
-        if test == false {
+        if preventError == false {
             for t in touches
                 {
                     var moveX = t.location(in: view).x
@@ -220,6 +223,7 @@ class GameScene: SKScene {
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         //print("Ended", startTime, movedXCoord)
+        preventError = false
         if test == false {
             for t in touches
             {
