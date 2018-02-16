@@ -74,8 +74,8 @@ class Objects : SKSpriteNode {
         xposition += CGFloat(widths[number-1]/2)
         //print(CGFloat(widths[number-1]/2))
         xCoordinates.append(Int(xposition))
-        if number == 1 {
-            //print(xCoordinates)
+        if number > 3 {
+            xposition -= (CGFloat(xCoordinates[0]) - currentXs[0])
         }
         self.position.x = CGFloat(xposition) //- currentXs[0] //the reason there is an error, is because this is made to create them when the bank is at the left side of the screen, so you have to take in account how far left everything is
         //var were = self.texture?.size()

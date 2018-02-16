@@ -244,6 +244,7 @@ class GameScene: SKScene {
 
 
     override func update(_ currentTime: TimeInterval) {
+        //print(CGFloat(xCoordinates[0]) - currentXs[0])
         var speed : CGFloat = 1
         //var barrier : CGFloat = size.width * CGFloat(3/4)
 
